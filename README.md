@@ -36,8 +36,3 @@ tokenSecret='TokenSecret'
 url='https://10ax.online.tableau.com'
 site='SiteName'
 ```
-
-## Install requirements
-```bash
-pip install -r requirements.txt
-```
