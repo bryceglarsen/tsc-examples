@@ -3,7 +3,7 @@ This repository provides some examples for TSC by Tableau.
 Below are some initial set-up steps I'd recommend.
 
 ## Tableau Developer Program
-Check out the new Developer Portal [here](https://tableau.com/developer)
+Check out the new Developer Portal [here](https://tableau.com/developer)  
 These examples are based on the use of a [free Sandbox](https://www.tableau.com/developer/get-site) through the program
 
 ## Use pyenv to set python version locally
@@ -35,6 +35,7 @@ tokenName='TokenName'
 tokenSecret='TokenSecret'
 url='https://10ax.online.tableau.com'
 site='SiteName'
+```
 
 ## Install requirements
 ```bash
