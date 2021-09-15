@@ -2,6 +2,10 @@
 This repository provides some examples for TSC by Tableau.
 Below are some initial set-up steps I'd recommend.
 
+## Tableau Developer Program
+Check out the new Developer Portal here: https://tableau.com/developer
+These examples are based on the use of a free Sandbox through the program: https://www.tableau.com/developer/get-site
+
 ## Use pyenv to set python version locally
 Intro to pyenv: https://realpython.com/intro-to-pyenv/
 ```bash
