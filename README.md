@@ -1,5 +1,6 @@
 # Using Tableau Server Client
 This repository provides some examples for TSC by Tableau.
+Official documentation can be found [here](https://tableau.github.io/server-client-python/docs/) and [GitHub](https://github.com/tableau/server-client-python)
 Below are some initial set-up steps I'd recommend.
 
 ## Tableau Developer Program
@@ -35,4 +36,10 @@ tokenName='TokenName'
 tokenSecret='TokenSecret'
 url='https://10ax.online.tableau.com'
 site='SiteName'
+```
+
+## Create New Projects
+Make new projects to use
+```bash
+python setup/CreateProjects.py
 ```
