@@ -130,3 +130,6 @@ dmypy.json
 
 # outputs area
 z*/
+
+# Office temp files
+~$*.xlsx*
