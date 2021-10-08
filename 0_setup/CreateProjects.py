@@ -27,7 +27,7 @@ if __name__ == '__main__':
     # Create root project name
     project_parent = "tsc-examples"
     # Create list of child projects
-    project_children = ["Human Resources", "Human Resources - DEV"]
+    project_children = ["Human Resources", "Human Resources - UAT"]
 
     # Sign into server
     with server.auth.sign_in(tableau_auth):
