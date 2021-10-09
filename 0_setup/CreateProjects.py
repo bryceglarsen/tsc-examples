@@ -12,7 +12,7 @@ def getCredentials(env):
 
 def createProject(project_name, parent_id=None):
     # New project item
-    new_project = TSC.ProjectItem(name=project_name, content_permissions='LockedToProject', description='Project for tsc-example', parent_id=parent_id)
+    new_project = TSC.ProjectItem(name=project_name, content_permissions='LockedToProjectWithoutNested', description='Project for tsc-example', parent_id=parent_id)
     # Create project on site
     new_project = server.projects.create(new_project)
     return new_project.id
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     # Create root project name
     project_parent = "tsc-examples"
     # Create list of child projects
-    project_children = ["Human Resources", "Human Resources - DEV"]
+    project_children = ["Human Resources", "Human Resources - UAT"]
 
     # Sign into server
     with server.auth.sign_in(tableau_auth):
