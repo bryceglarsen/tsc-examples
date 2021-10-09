@@ -1,0 +1,78 @@
+ProjectStageDSC,RoleTypeDSC,ObjectTypeDSC,CapabilityDSC,CapabilityAPI,ModeAPI
+PROD,Super Users,Project,View,Read,Allow
+PROD,Developers,Project,View,Read,Allow
+PROD,Viewers,Project,View,Read,Allow
+PROD,Super Users,Project,Write,Write,Allow
+PROD,Super Users,Workbook,View,Read,Allow
+PROD,Developers,Workbook,View,Read,Allow
+PROD,Viewers,Workbook,View,Read,Allow
+PROD,Super Users,Workbook,Web Authoring,WebAuthoring,Allow
+PROD,Developers,Workbook,Web Authoring,WebAuthoring,Allow
+PROD,Super Users,Workbook,Write,Write,Allow
+PROD,Super Users,Workbook,Download File,ExportXml,Allow
+PROD,Developers,Workbook,Download File,ExportXml,Allow
+PROD,Super Users,Workbook,Delete,Delete,Deny
+PROD,Developers,Workbook,Delete,Delete,Deny
+PROD,Viewers,Workbook,Delete,Delete,Deny
+PROD,Super Users,Workbook,Filter,Filter,Allow
+PROD,Developers,Workbook,Filter,Filter,Allow
+PROD,Viewers,Workbook,Filter,Filter,Allow
+PROD,Super Users,Workbook,Add Comment,AddComment,Allow
+PROD,Super Users,Workbook,View Comments,ViewComments,Allow
+PROD,Developers,Workbook,View Comments,ViewComments,Allow
+PROD,Viewers,Workbook,View Comments,ViewComments,Allow
+PROD,Super Users,Workbook,View Underlying Data,ViewUnderlyingData,Deny
+PROD,Developers,Workbook,View Underlying Data,ViewUnderlyingData,Deny
+PROD,Viewers,Workbook,View Underlying Data,ViewUnderlyingData,Deny
+PROD,Super Users,Workbook,Export Image,ExportImage,Allow
+PROD,Developers,Workbook,Export Image,ExportImage,Allow
+PROD,Viewers,Workbook,Export Image,ExportImage,Allow
+PROD,Super Users,Workbook,Move,ChangeHierarchy,Allow
+PROD,Super Users,Datasource,View,Read,Deny
+PROD,Developers,Datasource,View,Read,Deny
+PROD,Viewers,Datasource,View,Read,Deny
+PROD,Super Users,Datasource,Connect,Connect,Allow
+PROD,Developers,Datasource,Connect,Connect,Allow
+PROD,Viewers,Datasource,Connect,Connect,Allow
+PROD,Super Users,Datasource,Delete,Delete,Deny
+PROD,Developers,Datasource,Delete,Delete,Deny
+PROD,Viewers,Datasource,Delete,Delete,Deny
+UAT,Super Users,Project,View,Read,Allow
+UAT,Developers,Project,View,Read,Allow
+UAT,Viewers,Project,View,Read,Allow
+UAT,Super Users,Project,Write,Write,Allow
+UAT,Developers,Project,Write,Write,Allow
+UAT,Super Users,Workbook,View,Read,Allow
+UAT,Developers,Workbook,View,Read,Allow
+UAT,Viewers,Workbook,View,Read,Allow
+UAT,Super Users,Workbook,Web Authoring,WebAuthoring,Allow
+UAT,Developers,Workbook,Web Authoring,WebAuthoring,Allow
+UAT,Super Users,Workbook,Write,Write,Allow
+UAT,Developers,Workbook,Write,Write,Allow
+UAT,Super Users,Workbook,Download File,ExportXml,Allow
+UAT,Developers,Workbook,Download File,ExportXml,Allow
+UAT,Super Users,Workbook,Delete,Delete,Deny
+UAT,Developers,Workbook,Delete,Delete,Deny
+UAT,Super Users,Workbook,Filter,Filter,Allow
+UAT,Developers,Workbook,Filter,Filter,Allow
+UAT,Viewers,Workbook,Filter,Filter,Allow
+UAT,Developers,Workbook,Add Comment,AddComment,Allow
+UAT,Viewers,Workbook,Add Comment,AddComment,Allow
+UAT,Super Users,Workbook,Add Comment,AddComment,Allow
+UAT,Super Users,Workbook,View Comments,ViewComments,Allow
+UAT,Developers,Workbook,View Comments,ViewComments,Allow
+UAT,Viewers,Workbook,View Comments,ViewComments,Allow
+UAT,Super Users,Workbook,View Underlying Data,ViewUnderlyingData,Allow
+UAT,Developers,Workbook,View Underlying Data,ViewUnderlyingData,Allow
+UAT,Viewers,Workbook,View Underlying Data,ViewUnderlyingData,Deny
+UAT,Super Users,Workbook,Export Image,ExportImage,Allow
+UAT,Developers,Workbook,Export Image,ExportImage,Allow
+UAT,Viewers,Workbook,Export Image,ExportImage,Allow
+UAT,Super Users,Workbook,Move,ChangeHierarchy,Allow
+UAT,Super Users,Datasource,View,Read,Allow
+UAT,Developers,Datasource,View,Read,Allow
+UAT,Viewers,Datasource,View,Read,Deny
+UAT,Super Users,Datasource,Connect,Connect,Allow
+UAT,Developers,Datasource,Connect,Connect,Allow
+UAT,Viewers,Datasource,Connect,Connect,Allow
+UAT,Super Users,Datasource,Delete,Delete,Allow

@@ -1,9 +1,6 @@
-# Initial setup for future project samples
-# Create root "tsx-examples" project
-# Create two Human Resource projects under "tsx-examples" project
-# 1. Get get Credentials
-# 2. Get groups
-# 3. Get projects
+# 1. Get Credentials
+# 2. Get Groups
+# 3. Get Projects
 # 4. Assign permissions
 # 5. Assign view rights to parent folder(s)
 
@@ -41,7 +38,7 @@ def addToParent(project_id,  group):
 
 def assignPermissions(groups, projects):
     # Read in excel file with permissions mapping
-    permissions_df = pd.read_excel('./Permissions.xlsx', sheet_name='Permissions', engine='openpyxl')
+    permissions_df = pd.read_csv('./Permissions.csv')
 
     # Convert text strings to TSC API
     permissions_df['CapabilityAPI'] =  permissions_df['CapabilityAPI'].apply(lambda x: eval(('TSC.Permission.Capability.' + x)))
@@ -64,7 +61,7 @@ def assignPermissions(groups, projects):
 
         # Create dictionary mapping role & object type to capabilities/permissions
         # We want permissions in a dictionary to pass to the method
-        # (group, object) : permissions
+        # (role, object) : permissions
         object_to_permissions = {
             area : dict(zip(permissions.CapabilityAPI, permissions.ModeAPI))
             for area, permissions in project_permissions.groupby(['RoleTypeDSC', 'ObjectTypeDSC'])
@@ -104,5 +101,5 @@ if __name__ == '__main__':
 
         groups = getGroups(args.grouproot)
         projects = getProjects(args.projectroot)
-
         assignPermissions(groups, projects)
+        print('Added {} \nto {}!'.format(', '.join([group.name for group in groups]), ', '.join([project.name for project in projects])))
