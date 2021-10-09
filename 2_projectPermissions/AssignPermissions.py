@@ -51,7 +51,7 @@ def assignPermissions(groups, projects):
     # Loop through projects
     for project in projects:
         # Identify project stage by grabbing suffix
-        if len(project.name.rsplit(' - ', 1))>1 and project.name.rsplit(' - ', 1)[1] in ['DEV']:
+        if len(project.name.rsplit(' - ', 1))>1 and project.name.rsplit(' - ', 1)[1] in ['UAT']:
             project_stage = project.name.rsplit(' - ', 1)[1]
         else:
             project_stage = 'PROD'
