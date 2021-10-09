@@ -12,7 +12,7 @@ def getCredentials(env):
 
 def createProject(project_name, parent_id=None):
     # New project item
-    new_project = TSC.ProjectItem(name=project_name, content_permissions='LockedToProject', description='Project for tsc-example', parent_id=parent_id)
+    new_project = TSC.ProjectItem(name=project_name, content_permissions='LockedToProjectWithoutNested', description='Project for tsc-example', parent_id=parent_id)
     # Create project on site
     new_project = server.projects.create(new_project)
     return new_project.id
