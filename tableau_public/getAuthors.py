@@ -1,7 +1,6 @@
 import json
 import pandas as pd
 import urllib3
-import ast
 
 def getResults(start, count, keyword):
     # initalize total hits variable
@@ -19,7 +18,6 @@ def getResults(start, count, keyword):
             # append additional json results
             search_results.extend(search['results'])
         start += count
-        total_hits=200
 
     df = pd.DataFrame(search_results)
     return df
