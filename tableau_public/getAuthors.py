@@ -28,8 +28,10 @@ def getAuthors(df):
     # Add URL
     author_df['profileUrl'] = 'https://public.tableau.com/app/profile/' + author_df['profileName']
     # Convert ms timestamps to date
-    author_df['createdAt'] = pd.to_datetime(author_df['createdAt'], unit='ms', origin='unix', errors='coerce').dt.date
-    author_df['lastPublishDate'] = pd.to_datetime(author_df['lastPublishDate'], unit='ms', errors='coerce').dt.date
+    if 'createdAt' in author_df.columns:
+        author_df['createdAt'] = pd.to_datetime(author_df['createdAt'], unit='ms', origin='unix', errors='coerce').dt.date
+    if 'lastPublishDate' in author_df.columns:
+        author_df['lastPublishDate'] = pd.to_datetime(author_df['lastPublishDate'], unit='ms', errors='coerce').dt.date
     # Convert address dictionary to column
     author_df['address'] = author_df['address'].map(lambda d: {} if pd.isna(d) or not str(d).startswith('{') else json.loads(d))
     
