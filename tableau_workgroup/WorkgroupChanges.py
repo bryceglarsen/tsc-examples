@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
+from datetime import datetime
 import requests
 from pathlib import Path
 import lxml.html as lh
 import pandas as pd
 from bs4 import BeautifulSoup
+from datetime import date
 
 def getTablesViews(soup,version):
     tables = pd.read_html(str(soup),header=0)[:2]
@@ -73,7 +75,8 @@ def addAttributes(name,df):
 def main():
     tables_views_df = []
     table_df = []
-    years=range(2019,2022)
+    current_year = date.today().year
+    years = range(2019,current_year+1)
     releases = [1,2,3,4]
     
     for year in years:
