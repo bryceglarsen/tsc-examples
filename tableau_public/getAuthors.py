@@ -1,6 +1,7 @@
 import json
 import pandas as pd
 import urllib3
+from pathlib import Path
 
 def getResults(start, count, keyword):
     # initalize total hits variable
@@ -22,7 +23,7 @@ def getResults(start, count, keyword):
     df = pd.DataFrame(search_results)
     return df
 
-def getAuthors(df):
+def getAuthors(df, filepath):
     # Grab Author portion
     author_df = pd.json_normalize(df['author'])
     # Add URL
@@ -39,18 +40,18 @@ def getAuthors(df):
     author_df['state'] = author_df['address'].apply(lambda x: x.get('state', ''))
     author_df['city'] = author_df['address'].apply(lambda x: x.get('city', ''))
     # Cleanup
-    author_df.drop(['workbooks', 'gravatarHash', 'avatarUrl', 'searchable', 'address'], axis=1, inplace=True)
+    author_df.drop(['workbooks', 'avatarUrl', 'searchable', 'address'], axis=1, inplace=True)
     
     # Export full list
-    author_df.to_csv('./PublicAuthors.csv', index=False)
+    author_df.to_csv(filepath / 'PublicAuthors.csv', index=False)
     
     return author_df
     
-def filterAuthors(author_df, filter_dict):
+def filterAuthors(author_df, filter_dict, filepath):
     # use dictionary as filter
     filtered_df = author_df.loc[(author_df[list(filter_dict)] == pd.Series(filter_dict)).all(axis=1)]
     print('Saving filtered list of {} authors!'.format(len(filtered_df)))
-    filtered_df.to_csv('./PublicAuthorsFiltered.csv', index=False)
+    filtered_df.to_csv(filepath / 'PublicAuthorsFiltered.csv', index=False)
     return
 
 def main():
@@ -58,7 +59,11 @@ def main():
     count = 100
     keyword = 'california'
     df = getResults(start, count, keyword)
-    author_df = getAuthors(df)
+    # Get current path of script
+    filepath = Path(Path(__file__).parent) / 'zzzOutputs'
+    filepath.mkdir(exist_ok=True)
+    
+    author_df = getAuthors(df, filepath)
     # Create dictionary of columns to values
     # This will be used to filter dataframe
     
@@ -70,7 +75,7 @@ def main():
         # visibleWorkbookCount, vizCount
     filter_dict = {'state': 'California', 'freelance': True}
     
-    filterAuthors(author_df, filter_dict)
+    filterAuthors(author_df, filter_dict, filepath)
     print('All set!')
 
 if __name__ == '__main__':
