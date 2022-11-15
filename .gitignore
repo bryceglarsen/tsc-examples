@@ -133,3 +133,6 @@ z*/
 
 # Office temp files
 ~$*.xlsx*
+
+# MacOS
+*/DS_Store
