@@ -1,13 +1,11 @@
 # 1. Get Credentials
-# 2. Get Groups
-# 3. Get Projects
-# 4. Assign permissions
-# 5. Assign view rights to parent folder(s)
+# 2. Get Workbooks
+# 3. Get Views per Workbook
+# 4. Download View Image
 
 import tableauserverclient as TSC
 from pathlib import Path
 import os
-from datetime import date
 from dotenv import load_dotenv, find_dotenv
 
 def getCredentials(env):
@@ -15,11 +13,9 @@ def getCredentials(env):
     return os.environ.get('tokenName'), os.environ.get('tokenSecret'), os.environ.get('url'), os.environ.get('site')
 
 def main():
-    # get today's date as text
-    today = date.today().strftime('%Y%m%d')
     # define folder name
     currentfolder = Path(__file__).parent.absolute()
-    imgfolder = Path.joinpath(currentfolder, f'zViewImages/{today}')
+    imgfolder = Path.joinpath(currentfolder, 'ViewImages')
     
     # get all workbooks
     # you can add filter criteria here if desired to exclude by name, project, author, etc.
