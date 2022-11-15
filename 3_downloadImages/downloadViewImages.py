@@ -36,7 +36,8 @@ def main():
                 server.views.populate_image(view) #, image_req_option)
                 filename = wb.name + '~' + view.name + '.png'
                 print(filename)
-                with open(wbfolder + '/' + filename, 'wb') as f:
+                path = Path.joinpath(wbfolder, filename)
+                with path.open(mode='wb') as f:
                     f.write(view.image)
             except:
                 pass
